@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import AddToCartIcon from './AddToCartIcon'
 
 const Card = ({product}) => {
 
@@ -15,7 +16,9 @@ const Card = ({product}) => {
             </Link>
 
             <div className='absolute transition-all duration-500 group-hover:translate-x-0 translate-x-[150%] top-2 right-2 flex flex-col' >
-                <i className="bx cursor-pointer text-xl bg-white m-1 p-2 bx-cart"></i>
+
+                <AddToCartIcon product={product}  />
+
                 <i className="bx cursor-pointer text-xl bg-white m-1 p-2 bx-heart"></i>
             </div>
 

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Context from "@/Context/Context";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,8 +12,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Navbar />
-        {children}
+        <Context>
+          <Navbar />
+          {children}
+        </Context>
       </body>
     </html>
   );

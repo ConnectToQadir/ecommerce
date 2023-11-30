@@ -1,10 +1,12 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
+import { GlobalData } from "@/Context/Context";
 
 const Navbar = () => {
 
+  const {cart} = useContext(GlobalData)
   const [open,setOpen] = useState(false)
 
   return (
@@ -36,6 +38,9 @@ const Navbar = () => {
           <i className="bx p-2 text-xl bx-search"></i>
           <i className="bx p-2 text-xl bx-heart"></i>
           <i className="bx p-2 text-xl bx-cart"></i>
+          {cart.totalItems}
+          <br />
+          {cart.cartTotal}
         </div>
 
         {/* Mobile Navbar */}

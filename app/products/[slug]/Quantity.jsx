@@ -1,8 +1,13 @@
 "use client"
 
-import React, { useState } from "react";
+import { GlobalData } from "@/Context/Context";
+import React, { useContext, useState } from "react";
 
-const Quantity = () => {
+const Quantity = ({product}) => {
+
+  const {addToCart} = useContext(GlobalData)
+
+
 
     var [q,setQ] = useState(0)
 
@@ -19,7 +24,7 @@ const Quantity = () => {
         </button>
       </div>
 
-      <button className="bg-black text-white py-2 px-4">Add to Cart</button>
+      <button onClick={()=>addToCart(product)} className="bg-black text-white py-2 px-4">Add to Cart</button>
     </div>
   );
 };
