@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import { GlobalData } from "@/Context/Context";
 
-const page = () => {
+const Cart = () => {
   const { cart,addToCart } = useContext(GlobalData);
 
   return (
@@ -96,4 +96,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Cart;
