@@ -24,7 +24,7 @@ const Cart = () => {
             <tbody>
               {cart.cartItems.map((v, i) => {
                 return (
-                  <tr className="my-4 border-b">
+                  <tr key={i} className="my-4 border-b">
                     <td>
                       <div className="grid grid-cols-4 py-4 items-center">
                         <div className="mr-3 col-span-1">
