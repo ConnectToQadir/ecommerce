@@ -1,6 +1,6 @@
 "use client"
 
-import { GlobalData } from "@/Context/Context"
+import { GlobalData } from "@/src/Context/Context"
 import { useContext } from "react"
 
 const AddToCartIcon = ({product}) => {

@@ -11,8 +11,8 @@ const Card = ({product}) => {
 
         <div className='mb-2 overflow-hidden relative'>
 
-            <Link href={`/products/${product.id}`} >
-            <img className='w-full' src={product.image} alt="" />
+            <Link href={`/products/${product._id}`} >
+            <img className='w-full' src={product.feturedImage.url} alt="" />
             </Link>
 
             <div className='absolute transition-all duration-500 group-hover:translate-x-0 translate-x-[150%] top-2 right-2 flex flex-col' >
@@ -34,7 +34,7 @@ const Card = ({product}) => {
                 <i className="bx bx-star"></i>
                 <i className="bx bx-star"></i>
             </div>
-            <p className='text-lg font-bold' >${product.price}</p>
+            <p className='text-lg font-bold' >Rs{product.price}</p>
         </div>
     </div>
   )

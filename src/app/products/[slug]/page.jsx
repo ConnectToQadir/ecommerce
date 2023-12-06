@@ -60,7 +60,7 @@ const page = (props) => {
   ];
 
   var selectedProduct = products.filter(v=>{
-    return v.id == id
+    return v._id == id
   }) 
 
 
@@ -77,8 +77,8 @@ const page = (props) => {
                 <h2 className='text-3xl font-bold mb-4' >{selectedProduct[0].title}</h2>
 
                 <p className='text-2xl font-semibold text-red-600'>
-                    <strike className='text-gray-400 text-xl' >$159.00</strike>
-                    <span> ${selectedProduct[0].price}</span>
+                    <strike className='text-gray-400 text-xl' >Rs159.00</strike>
+                    <span> Rs{selectedProduct[0].price}</span>
                 </p>
 
 

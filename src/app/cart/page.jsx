@@ -1,10 +1,10 @@
 "use client";
 import React, { useContext } from "react";
 import Link from "next/link";
-import { GlobalData } from "@/Context/Context";
+import { GlobalData } from "@/src/Context/Context";
 
 const Cart = () => {
-  const { cart,addToCart } = useContext(GlobalData);
+  const { cart,addToCart,removeItemFromCart,decreseItemQuantity } = useContext(GlobalData);
 
   return (
     <div className="p-4">
@@ -30,26 +30,26 @@ const Cart = () => {
                         <div className="mr-3 col-span-1">
                           <img
                             className="w-full"
-                            src={v.image}
+                            src={v.feturedImage.url}
                             alt=""
                           />
                         </div>
                         <div className="col-span-3">
                           <h2 className="font-bold line-clamp-1">{v.title}</h2>
-                          <p>${v.price}</p>
+                          <p>Rs{v.price}</p>
                         </div>
                       </div>
                     </td>
                     <td>
                       <div className="flex items-center justify-center px-4 text-2xl">
-                        <button className="">-</button>
+                        <button onClick={()=>decreseItemQuantity(v)} className="">-</button>
                         <span className="mx-4">{v.quantity}</span>
                         <button onClick={()=>addToCart(v)} className="">+</button>
                       </div>
                     </td>
-                    <td className="text-center px-4">${v.total}</td>
+                    <td className="text-center px-4">Rs{v.total}</td>
                     <td className="text-center px-8">
-                      <i className="bx text-2xl p-2 bg-gray-200 hover:bg-gray-300 cursor-pointer rounded-full bx-x"></i>
+                      <i onClick={()=>removeItemFromCart(v._id)} className="bx text-2xl p-2 bg-gray-200 hover:bg-gray-300 cursor-pointer rounded-full bx-x"></i>
                     </td>
                   </tr>
                 );
@@ -65,22 +65,22 @@ const Cart = () => {
 
             <div className="flex py-2 items-center justify-between">
               <div>Subtotal</div>
-              <div className="text-red-600">$ {cart.cartTotal}</div>
+              <div className="text-red-600">Rs {cart.cartTotal}</div>
             </div>
 
             <div className="flex py-2 items-center justify-between">
               <div>Tax</div>
-              <div className="text-red-600">$ 0</div>
+              <div className="text-red-600">Rs 0</div>
             </div>
 
             <div className="flex py-2 items-center justify-between">
               <div>Shipping Charges</div>
-              <div className="text-red-600">$ 0</div>
+              <div className="text-red-600">Rs 0</div>
             </div>
 
             <div className="flex py-2 items-center justify-between">
               <div>Total</div>
-              <div className="text-red-600">$ {cart.cartTotal}</div>
+              <div className="text-red-600">Rs {cart.cartTotal}</div>
             </div>
 
             <Link

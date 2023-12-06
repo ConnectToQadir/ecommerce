@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Context from "@/Context/Context";
+import Navbar from "@/src/components/Navbar";
+import Context from "@/src/Context/Context";
 
 export default function RootLayout({ children }) {
   return (

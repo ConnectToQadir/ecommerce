@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from "react";
 import Link from "next/link";
-import { GlobalData } from "@/Context/Context";
+import { GlobalData } from "@/src/Context/Context";
 
 const Navbar = () => {
 
