@@ -5,7 +5,7 @@ import Quantity from "./Quantity"
 
 
 async function findProductById(id){
-  var res = await axios.get(`https://connecttoqadir.com/api/products?id=${id}`)
+  var res = await axios.get(`http://localhost:3000/api/products?id=${id}`)
   return res.data.message[0]
 }
 
