@@ -44,7 +44,7 @@ const Page = ({params}) => {
   const uploadProduct = async (e) => {
     e.preventDefault();
 
-    var cUrl = tempImg ? await uploadImageToCloudinay() : formData.feturedImage.url;
+    var cUrl = tempImg ? await uploadImageToCloudinay() : formData.feturedImage?.url;
 
     var res = await axios.put("/api/products", {
       ...formData,
@@ -102,7 +102,7 @@ const Page = ({params}) => {
           </div>
         ) : (
           <div>
-            <label className="block" htmlFor="feturedImage.url">
+            <label className="block" htmlFor="feturedImage?.url">
               Featured Image
             </label>
             <input
@@ -110,7 +110,7 @@ const Page = ({params}) => {
               required
               onChange={(e) => setTempImg(e.target.files[0])}
               placeholder="Featured Image URL"
-              name="feturedImage.url"
+              name="feturedImage?.url"
               type="file"
             />
           </div>

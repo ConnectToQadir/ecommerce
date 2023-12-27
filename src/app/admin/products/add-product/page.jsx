@@ -91,7 +91,7 @@ const Page = () => {
           </div>
         ) : (
           <div>
-            <label className="block" htmlFor="feturedImage.url">
+            <label className="block" htmlFor="feturedImage?.url">
               Featured Image
             </label>
             <input
@@ -99,7 +99,7 @@ const Page = () => {
               required
               onChange={(e) => setTempImg(e.target.files[0])}
               placeholder="Featured Image URL"
-              name="feturedImage.url"
+              name="feturedImage?.url"
               type="file"
             />
           </div>

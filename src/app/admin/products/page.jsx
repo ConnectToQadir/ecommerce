@@ -78,7 +78,7 @@ const Page = () => {
               return(
                 <tr key={i} className='border-b'>
                   <td className='py-1 px-2 flex items-center' >
-                    <img className='w-16 mr-2' src={v.feturedImage.url} alt="" />
+                    <img className='w-16 mr-2' src={v.feturedImage?.url} alt="" />
                     {v.title}
                   </td>
                   <td className='py-1 px-2 text-center' >{v.price}</td>

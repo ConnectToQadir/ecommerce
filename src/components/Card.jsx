@@ -12,7 +12,7 @@ const Card = ({product}) => {
         <div className='mb-2 overflow-hidden relative'>
 
             <Link href={`/products/${product._id}`} >
-            <img className='w-full' src={product.feturedImage.url} alt="" />
+            <img className='w-full' src={product.feturedImage?.url} alt="" />
             </Link>
 
             <div className='absolute transition-all duration-500 group-hover:translate-x-0 translate-x-[150%] top-2 right-2 flex flex-col' >

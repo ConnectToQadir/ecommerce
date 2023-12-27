@@ -30,7 +30,7 @@ const Cart = () => {
                         <div className="mr-3 col-span-1">
                           <img
                             className="w-full"
-                            src={v.feturedImage.url}
+                            src={v.feturedImage?.url}
                             alt=""
                           />
                         </div>
