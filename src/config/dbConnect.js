@@ -5,7 +5,7 @@ function dbConnect(){
     if(mongoose.connection.readyState >= 1){
         return
     }
-    mongoose.connect("mongodb://127.0.0.1:27017/ecom")
+    mongoose.connect("mongodb+srv://qadir:qadir@edify.0i5koc5.mongodb.net/ecom?retryWrites=true&w=majority")
 }
 
 
