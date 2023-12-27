@@ -35,12 +35,19 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden md:block">
+
+
           <i className="bx p-2 text-xl bx-search"></i>
           <i className="bx p-2 text-xl bx-heart"></i>
-          <i className="bx p-2 text-xl bx-cart"></i>
-          {cart.totalItems}
-          <br />
-          {cart.cartTotal}
+
+         <Link href="/cart">
+              <div className="inline-block relative">
+                  <i className="bx p-2 text-xl bx-cart"></i>
+                  <span className="absolute right-0 top-0 bg-red-700 w-4 text-xs h-4 flex items-center justify-center text-white rounded-full">{cart.totalItems}</span>
+                </div>
+         </Link>
+
+          {/* {cart.cartTotal} */}
         </div>
 
         {/* Mobile Navbar */}

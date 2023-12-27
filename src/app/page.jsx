@@ -8,11 +8,9 @@ export const metadata = {
 };
 
 async function fectchProducts(){
-  var res = await axios.get("http://localhost:3000/api/products")
+  var res = await axios.get("https://connecttoqadir.com/api/products")
   return res.data.message
 }
-
-
 
 
 const page = async () => {

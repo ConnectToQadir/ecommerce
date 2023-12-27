@@ -7,9 +7,6 @@ export const GlobalData = createContext()
 
 const Context = ({children}) => {
 
-
-
-
     var [cart,setCart] = useState({
         cartItems:[],
         cartTotal:0,

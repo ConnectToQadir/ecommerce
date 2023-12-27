@@ -85,7 +85,7 @@ const Cart = () => {
 
             <Link
               className="bg-black block p-2 mt-4 text-white text-center"
-              href="/cart"
+              href="/checkout"
             >
               Proceed To Checkout
             </Link>

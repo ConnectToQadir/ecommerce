@@ -1,4 +1,4 @@
-import Products from "@/src/models/Products";
+import OrdersModal from "@/src/models/Orders";
 import dbConnect from "@/src/config/dbConnect";
 
 export default async function handler(req, res) {
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
           match._id = req.query.id;
         }
 
-        var foundItems = await Products.find(match);
+        var foundItems = await OrdersModal.find(match);
         res.json({
           success: true,
           message: foundItems,
@@ -28,11 +28,11 @@ export default async function handler(req, res) {
       break;
     case "POST":
       try {
-        var product = await Products.create(req.body);
+        var order = await OrdersModal.create(req.body);
 
         res.json({
           success: true,
-          message: product,
+          message: order,
         });
       } catch (error) {
         res.json({
@@ -43,11 +43,11 @@ export default async function handler(req, res) {
       break;
     case "PUT":
       try {
-        await Products.findByIdAndUpdate(req.body._id, { $set: req.body });
+        await OrdersModal.findByIdAndUpdate(req.body._id, { $set: req.body });
 
         res.json({
           success: true,
-          message: "Product Updated Successfully!",
+          message: "Order Updated Successfully!",
         });
       } catch (error) {
         res.json({
@@ -59,14 +59,13 @@ export default async function handler(req, res) {
     case "DELETE":
       try {
 
-        console.log(req.query.id)
-        await Products.findByIdAndDelete(req.query.id);
+        await OrdersModal.findByIdAndDelete(req.query.id);
 
 
 
         res.json({
           success: true,
-          message: "Product Deleted Successfully!",
+          message: "Order Deleted Successfully!",
         });
 
 
