@@ -7,15 +7,16 @@ export const metadata = {
   description: "Home Page",
 };
 
-async function fectchProducts(){
-  var res = await axios.get("http://localhost:3000/api/products")
-  return res.data.message
-}
+// async function fectchProducts(){
+//   var res = await axios.get("http://localhost:3000/api/products")
+//   return res.data.message
+// }
 
 
 const page = async () => {
 
-  var products = await fectchProducts()
+  // var products = await fectchProducts()
+  var products = []
 
 
 
