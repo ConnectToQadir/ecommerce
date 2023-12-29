@@ -4,7 +4,8 @@ const schema = new mongoose.Schema({
     items:[
         {
             productID:{
-                type:mongoose.Schema.Types.ObjectId
+                type:mongoose.Schema.Types.ObjectId,
+                ref:"products"
             },
             quantity:{
                 type:Number,
@@ -28,9 +29,19 @@ const schema = new mongoose.Schema({
         required:true,
         enum:[
             "Pending",
+            "Confirmed",
             "Shipped",
             "Delivered",
             "Cancelled",
+        ]
+    },
+    paymentStatus:{
+        type:String,
+        default:"Pending",
+        required:true,
+        enum:[
+            "Pending",
+            "Confirmed",
         ]
     },
     remarks:String

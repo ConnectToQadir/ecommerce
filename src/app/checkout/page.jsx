@@ -31,7 +31,7 @@ const Page = () => {
       var res = await axios.post('/api/orders',{
         items:cart.cartItems.map(v=>{
           var obj = {
-            id:v._id,
+            productID:v._id,
             unitPrice:v.price,
             quantity:v.quantity
           }

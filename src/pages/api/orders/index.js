@@ -1,5 +1,6 @@
 import OrdersModal from "@/src/models/Orders";
 import dbConnect from "@/src/config/dbConnect";
+import Products from "@/src/models/Products";
 
 export default async function handler(req, res) {
   dbConnect();
@@ -14,10 +15,25 @@ export default async function handler(req, res) {
           match._id = req.query.id;
         }
 
-        var foundItems = await OrdersModal.find(match);
+        var foundOrders = await OrdersModal.find(match).populate({
+          path:"items.productID",
+          modal:Products,
+          select:["title","feturedImage","stock"]
+        });
+
+        foundOrders = foundOrders.map(order=>{
+          var total = 0
+          order.items.map(v=>{
+            total = total + v.quantity*v.unitPrice
+          })
+
+          var obj = {...order._doc,total}
+          return obj
+        })
+
         res.json({
           success: true,
-          message: foundItems,
+          message: foundOrders,
         });
       } catch (error) {
         res.json({
